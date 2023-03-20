@@ -1,14 +1,16 @@
 import random
+import os
+import dotenv
 
 from aiogram import Bot, Dispatcher
 from aiogram.types import Message
 from aiogram.filters import Text, Command
-from bot_token import BOT_TOKEN
 
 
 # Вместо BOT TOKEN HERE нужно вставить токен вашего бота,
 # полученный у @BotFather
-BOT_TOKEN: str = BOT_TOKEN
+dotenv.load_dotenv()
+BOT_TOKEN: str = os.getenv('BOT_TOKEN')
 
 
 # Создаем объекты бота и диспетчера
